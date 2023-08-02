@@ -1,0 +1,31 @@
+div.center {
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  & > h2 {
+    margin-bottom: 2rem;
+  }
+}
+
+dl.browserList {
+  margin-top: 40px;
+  padding: 10px 30px;
+  border-radius: 1.5rem;
+  background-color: var(--main2-bg-color);
+  box-sizing: border-box;
+
+  & > dd {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  & img {
+    width: 48px;
+    height: 48px;
+  }
+}
