@@ -1,7 +1,8 @@
+import React from 'react';
 import logo from '@/logo.svg';
 import '@/App.css';
-import { checkBrowser } from '@utils/browserUtils';
 import UnsuppotedBrowser from '@pages/default/unsupported_browser';
+import { checkBrowser } from '@utils/browserUtils';
 
 function App() {
   return checkBrowser() ? (
