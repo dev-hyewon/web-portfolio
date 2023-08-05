@@ -1,0 +1,17 @@
+article.section-wrapper:not(:first-child) {
+  border-top: 1px dotted lightgray;
+}
+
+article.section-wrapper > header {
+  margin: 0;
+  padding: 20px 0;
+}
+
+article.section-wrapper > header > h1 > a::before {
+  content: attr(data-icon);
+  margin-right: 10px;
+}
+
+article.section-wrapper > header > h4 {
+  color: gray;
+}

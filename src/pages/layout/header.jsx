@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import profileImg from '@assets/image/google_profile.jpg';
 import './styles.css';
 
 const Header = () => {
@@ -28,17 +29,35 @@ const Header = () => {
         <span></span>
       </label>
       <nav id="menu-content">
-        <div>
+        <header>
+          <img src={profileImg}></img>
           <h4>Junior Developer. 이혜원</h4>
-        </div>
+        </header>
         <dl>
-          <dt>section1</dt>
-          <dt>section2</dt>
-          <dt>section3</dt>
-          <dt>section4</dt>
-          <dt>section5</dt>
-          <dt>section6</dt>
-          <dt>section7</dt>
+          <dt>
+            <a data-icon="📃" href="#main-section-intro" onClick={closeMenu}>
+              자기소개
+            </a>
+          </dt>
+          <dt>
+            <a data-icon="📁" href="#main-section-skill" onClick={closeMenu}>
+              기술 스택
+            </a>
+          </dt>
+          <dt>
+            <a data-icon="📁" href="#main-section-project" onClick={closeMenu}>
+              프로젝트
+            </a>
+          </dt>
+          <dt>
+            <a
+              data-icon="📃"
+              href="#main-section-education"
+              onClick={closeMenu}
+            >
+              학력/이력
+            </a>
+          </dt>
           <dt>
             <button onClick={closeMenu}>취소</button>
           </dt>
