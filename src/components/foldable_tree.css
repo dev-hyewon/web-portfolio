@@ -1,0 +1,59 @@
+details > summary {
+  cursor: pointer;
+  list-style-type: none;
+  &::-webkit-details-marker {
+    display: none;
+  }
+  &::before {
+    content: '📁';
+    margin-right: 10px;
+  }
+}
+
+details[open] > summary {
+  &::before {
+    content: '📂';
+  }
+}
+
+details > ul {
+  position: relative;
+  margin-left: 10px;
+  padding-left: 0;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  list-style-type: none;
+  color: gray;
+  &::before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    bottom: 10px;
+    border-left: 1px dotted gray;
+  }
+  & ul {
+    margin: 10px;
+  }
+}
+
+details > ul > li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 1px;
+    border-bottom: 1px dotted gray;
+  }
+}
+
+details > ul > li:has(> details) {
+  align-items: start;
+  &::before {
+    margin-top: 10px;
+  }
+}

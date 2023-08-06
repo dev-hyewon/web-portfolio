@@ -1,5 +1,24 @@
 import React from 'react';
+import FoldableTree from '@/components/foldable_tree';
 import './styles.css';
+
+const UNIVERSITY_DATA = [
+  {
+    label: '디지털미지어학과',
+    open: true,
+    children: [{ label: '제1전공 : 공학사' }],
+  },
+  {
+    label: '정보보호학과',
+    open: true,
+    children: [{ label: '제2전공 : 공학사' }],
+  },
+  {
+    label: '소프트웨어융합학과',
+    open: true,
+    children: [{ label: '부전공' }],
+  },
+];
 
 const EducationArticle = () => {
   return (
@@ -16,28 +35,9 @@ const EducationArticle = () => {
         <div>
           <h3>서울여자대학교</h3>
           <h5>2017.03 - 2021.02</h5>
-          <details open>
-            <summary>디지털미지어학과</summary>
-            <ul>
-              <li>제1전공 : 공학사</li>
-              <li>총 이수 학점:</li>
-            </ul>
-          </details>
-          <details open>
-            <summary>정보보호학과</summary>
-            <ul>
-              <li>제2전공 : 공학사</li>
-              <li>암호학개론</li>
-            </ul>
-          </details>
-          <details open>
-            <summary>소프트웨어융합학과</summary>
-            <ul>
-              <li>부전공</li>
-              <li>인공지능</li>
-              <li>알고리즘</li>
-            </ul>
-          </details>
+          {UNIVERSITY_DATA.map((root) => (
+            <FoldableTree key={root.key} node={root} />
+          ))}
         </div>
       </section>
       <section>
