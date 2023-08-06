@@ -15,3 +15,36 @@ article.section-wrapper > header > h1 > a::before {
 article.section-wrapper > header > h4 {
   color: gray;
 }
+
+article.section-wrapper > section {
+  @media (max-width: 768px) {
+    position: relative;
+    &#univercity-article::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  @media not (max-width: 768px) {
+    display: flex;
+    &#univercity-article::after {
+      margin-left: 20px;
+    }
+  }
+}
+
+article.section-wrapper > section#univercity-article::after {
+  content: '';
+  width: 192px;
+  height: 192px;
+  display: block;
+  background-image: url(/src/assets/image/01MainSymb.jpg);
+  background-size: cover;
+}
+
+article.section-wrapper > section > :where(figure, div) {
+  @media not (max-width: 768px) {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
