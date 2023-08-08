@@ -1,3 +1,7 @@
+article.section-wrapper {
+  margin: 0 20px;
+}
+
 article.section-wrapper:not(:first-child) {
   border-top: 1px dotted lightgray;
 }
@@ -16,7 +20,20 @@ article.section-wrapper > header > h4 {
   color: gray;
 }
 
-article.section-wrapper > section {
+article#main-section-education > div {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 20px;
+}
+
+article#main-section-education > div > section > :where(figure, div) {
+  @media not (max-width: 768px) {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+article#main-section-education > div > section {
   @media (max-width: 768px) {
     position: relative;
     &#univercity-article::after {
@@ -33,18 +50,12 @@ article.section-wrapper > section {
   }
 }
 
-article.section-wrapper > section#univercity-article::after {
+article#main-section-education > div > section#univercity-article::after {
   content: '';
   width: 192px;
   height: 192px;
   display: block;
   background-image: url(/src/assets/image/01MainSymb.jpg);
   background-size: cover;
-}
-
-article.section-wrapper > section > :where(figure, div) {
-  @media not (max-width: 768px) {
-    display: inline-block;
-    vertical-align: top;
-  }
+  opacity: 0.2;
 }

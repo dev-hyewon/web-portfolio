@@ -31,21 +31,23 @@ const EducationArticle = () => {
         </h1>
         <h4>IT 전공 주니어 개발자입니다.</h4>
       </header>
-      <section id="univercity-article">
-        <div>
-          <h3>서울여자대학교</h3>
-          <h5>2017.03 - 2021.02</h5>
-          {UNIVERSITY_DATA.map((root) => (
-            <FoldableTree key={root.key} node={root} />
-          ))}
-        </div>
-      </section>
-      <section>
-        <h3>자격증</h3>
-        <ul>
-          <li>정보처리기사</li>
-        </ul>
-      </section>
+      <div>
+        <section id="univercity-article">
+          <div>
+            <h3>서울여자대학교</h3>
+            <h5>2017.03 - 2021.02</h5>
+            {UNIVERSITY_DATA.map((root) => (
+              <FoldableTree key={root.key} node={root} />
+            ))}
+          </div>
+        </section>
+        <section>
+          <h3>자격증</h3>
+          <ul>
+            <li>정보처리기사</li>
+          </ul>
+        </section>
+      </div>
     </article>
   );
 };
