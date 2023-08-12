@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css';
+import { TechImg } from '@/components/icons8';
 
 const techList = [
   {
@@ -50,12 +51,17 @@ const SkillStackArticle = () => {
       </header>
       <div>
         <dl>
-          {techList.map((section, i) => (
-            <section key={`skill_section${i}`}>
+          {techList.map((section) => (
+            <section key={`section_${section.title}`}>
               <dt>{section.title}</dt>
-              {section.items.map((item, j) => (
-                <dd key={`skill_section${i}_item${j}`}>{item}</dd>
-              ))}
+              <div>
+                {section.items.map((item) => (
+                  <dd key={`skill_${item}`}>
+                    {TechImg(item)}
+                    {item}
+                  </dd>
+                ))}
+              </div>
             </section>
           ))}
         </dl>

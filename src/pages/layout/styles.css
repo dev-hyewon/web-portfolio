@@ -193,7 +193,7 @@ div#header-wrapper > nav#menu-content button {
 
 article.section-wrapper {
   &:not(:last-child) {
-    height: 100vh;
+    min-height: 100vh;
   }
   @media (max-width: 768px) {
     padding: 10px;
