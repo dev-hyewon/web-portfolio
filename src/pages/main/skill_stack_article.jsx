@@ -1,4 +1,5 @@
 import React from 'react';
+import './skill_stack_article.css';
 import './styles.css';
 import { TechImg } from '@/components/icons8';
 
