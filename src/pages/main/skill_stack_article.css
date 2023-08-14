@@ -11,9 +11,28 @@ article#main-section-skill section {
   display: inline;
   position: relative;
   align-items: center;
-  padding: 10px;
-  background-color: var(--section-background);
-  border-radius: 1.5rem;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+    background-color: var(--section-background);
+    border-radius: 1.5rem;
+  }
+
+  @media not (max-width: 768px) {
+    padding: 1.5rem 1rem;
+    gap: 10px;
+    &:before {
+      position: absolute;
+      content: '';
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--section-background);
+      border-radius: 1.5rem;
+    }
+  }
 }
 
 article#main-section-skill section > dt {
