@@ -21,3 +21,10 @@ a {
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
 }
+
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

@@ -1,0 +1,81 @@
+aside > header {
+  @media (max-width: 768px) {
+    display: none;
+  }
+  @media not (max-width: 768px) {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 70px 0;
+    & > figure {
+      margin: 0;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    & > figure > img {
+      display: block;
+      transition: all 5s ease-out;
+      max-width: 120%;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    & > h4 {
+      margin: 0;
+    }
+  }
+}
+
+aside > dl {
+  flex: 1;
+  display: flex;
+  flex-flow: column wrap;
+  @media (max-width: 768px) {
+    padding: 0;
+    margin-top: 30px;
+    align-items: center;
+    & > dt {
+      position: relative;
+      width: 100%;
+      flex-grow: 1;
+      & > * {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  @media not (max-width: 768px) {
+    margin: 0 auto;
+    gap: 30px;
+    & > dt > a {
+      padding: 10px 50px;
+      &:hover {
+        border-radius: 20px;
+        background-color: whitesmoke;
+      }
+      &::before {
+        content: attr(data-icon);
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+aside > button#aside-close {
+  border-top: 1px solid lightgray;
+  padding: 15px;
+}
+
+aside button {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  font-size: inherit;
+  -webkit-tap-highlight-color: transparent !important;
+  & > img:hover {
+    filter: brightness(0.9);
+  }
+}
