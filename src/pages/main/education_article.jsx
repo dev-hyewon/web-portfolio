@@ -37,7 +37,7 @@ const EducationArticle = () => {
             <h3>서울여자대학교</h3>
             <h5>2017.03 - 2021.02</h5>
             {UNIVERSITY_DATA.map((root) => (
-              <FoldableTree key={root.key} node={root} />
+              <FoldableTree key={root.label} node={root} />
             ))}
           </div>
         </section>
