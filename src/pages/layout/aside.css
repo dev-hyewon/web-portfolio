@@ -27,6 +27,29 @@ aside > header {
   }
 }
 
+aside > header > address.sns-link {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  & > a {
+    padding: 0;
+  }
+  & > a > img {
+    display: block;
+    width: 32px;
+    &:hover {
+      filter: brightness(0.9);
+    }
+    &[src$='.svg'] {
+      padding: 3px;
+    }
+    &[alt='github'] {
+      background-color: white;
+      border-radius: 3px;
+    }
+  }
+}
+
 aside > dl {
   flex: 1;
   display: flex;
@@ -75,7 +98,4 @@ aside button {
   background-color: transparent;
   font-size: inherit;
   -webkit-tap-highlight-color: transparent !important;
-  & > img:hover {
-    filter: brightness(0.9);
-  }
 }

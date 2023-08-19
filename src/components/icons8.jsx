@@ -6,6 +6,20 @@ const initialProps = {
   height: '48',
 };
 
+export const SNS_Img = (name) => {
+  let props = initialProps;
+  switch (name) {
+    case 'github':
+      props = {
+        src: 'https://img.icons8.com/material-sharp/48/github.png',
+        alt: 'github',
+      };
+      break;
+    default:
+  }
+  return <img {...props} />;
+};
+
 export const TechImg = (name) => {
   let props = initialProps;
   switch (name) {
