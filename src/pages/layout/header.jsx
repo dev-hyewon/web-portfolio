@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Aside from './aside';
+import { INPUT_ID_MENU } from '@/constant';
+import Aside from '@pages/aside/aside';
+import Language from '@pages/aside/language';
 import './header.css';
 
 const Header = () => {
@@ -13,27 +15,23 @@ const Header = () => {
   }, [on]);
 
   const toggleMenu = () => setOn(!on);
-  const closeMenu = () => setOn(false);
 
   return (
     <div id="header-wrapper">
       <input
         type="checkbox"
-        id="menu-icon"
+        id={INPUT_ID_MENU}
         checked={on}
         onChange={toggleMenu}
         style={{ display: 'none' }}
       />
-      <label htmlFor="menu-icon">
+      <label htmlFor={INPUT_ID_MENU}>
         <span></span>
         <span></span>
         <span></span>
       </label>
-      <Aside>
-        <button id="aside-close" onClick={closeMenu}>
-          닫기
-        </button>
-      </Aside>
+      <Aside on={on} />
+      <Language />
     </div>
   );
 };

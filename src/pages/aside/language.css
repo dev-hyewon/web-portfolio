@@ -1,0 +1,35 @@
+aside#language-aside {
+  position: fixed;
+  display: flex;
+  flex-flow: column wrap;
+  z-index: 11;
+  transition: all 0.35s;
+  background-color: white;
+  box-sizing: border-box;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 400px;
+    bottom: -400px;
+    left: 0;
+    border-radius: 20px 20px 0 0;
+  }
+  @media not (max-width: 768px) {
+    width: 500px;
+    height: 100%;
+    top: 0;
+    left: -600px;
+    font-size: 18px;
+  }
+}
+
+input#menu-icon:checked
+  + label
+  + aside#default-aside:has(> dl > dt > input:checked)
+  + aside#language-aside {
+  @media (max-width: 768px) {
+    bottom: 0;
+  }
+  @media not (max-width: 768px) {
+    left: 0;
+  }
+}

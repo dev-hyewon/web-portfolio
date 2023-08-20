@@ -1,5 +1,4 @@
 div#header-wrapper > input#menu-icon + label {
-  cursor: pointer;
   display: block;
   position: fixed;
   right: 0;

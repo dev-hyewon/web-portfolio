@@ -1,13 +1,46 @@
 aside > header {
+  & * {
+    margin: 0;
+  }
+  &,
+  & header {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
+  }
+  @media (max-width: 768px) {
+    margin: 40px 20px 20px;
+  }
+  @media not (max-width: 768px) {
+    margin: 70px 30px;
+  }
+}
+
+aside > *:nth-last-child(2) {
+  text-align: center;
+  flex: 1;
+}
+
+aside > footer {
+  box-sizing: border-box;
+  border-top: 1px solid lightgray;
+}
+
+aside > footer > label {
+  display: block;
+  padding: 15px;
+  text-align: center;
+  &:hover {
+    background-color: whitesmoke;
+  }
+}
+
+aside#default-aside > header {
   @media (max-width: 768px) {
     display: none;
   }
   @media not (max-width: 768px) {
-    display: flex;
-    flex-flow: column wrap;
     align-items: center;
-    gap: 10px;
-    margin: 70px 0;
     & > figure {
       margin: 0;
       border-radius: 20px;
@@ -27,7 +60,7 @@ aside > header {
   }
 }
 
-aside > header > address.sns-link {
+aside#default-aside > header > address.sns-link {
   margin-top: 10px;
   display: flex;
   gap: 10px;
@@ -50,8 +83,7 @@ aside > header > address.sns-link {
   }
 }
 
-aside > dl {
-  flex: 1;
+aside#default-aside > dl {
   display: flex;
   flex-flow: column wrap;
   @media (max-width: 768px) {
@@ -62,6 +94,9 @@ aside > dl {
       position: relative;
       width: 100%;
       flex-grow: 1;
+      & img {
+        display: none;
+      }
       & > * {
         position: absolute;
         top: 50%;
@@ -72,30 +107,28 @@ aside > dl {
   }
   @media not (max-width: 768px) {
     margin: 0 auto;
-    gap: 30px;
-    & > dt > a {
+    gap: 10px;
+    & > dt > :where(a, label) {
+      width: 100%;
+      display: inline-flex;
+      gap: 10px;
       padding: 10px 50px;
       &:hover {
         border-radius: 20px;
         background-color: whitesmoke;
       }
-      &::before {
+      &[data-icon]:before {
         content: attr(data-icon);
-        margin-right: 10px;
       }
     }
   }
 }
 
-aside > button#aside-close {
-  border-top: 1px solid lightgray;
-  padding: 15px;
-}
-
-aside button {
-  cursor: pointer;
-  border: 0;
-  background-color: transparent;
-  font-size: inherit;
-  -webkit-tap-highlight-color: transparent !important;
+aside#default-aside:has(> dl > dt > input:checked) {
+  @media (max-width: 768px) {
+    bottom: -300px !important;
+  }
+  @media not (max-width: 768px) {
+    left: -600px !important;
+  }
 }
