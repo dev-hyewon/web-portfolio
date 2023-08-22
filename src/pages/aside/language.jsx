@@ -1,13 +1,19 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Radio from '@/components/radio';
 import { INPUT_ID_SUB_MENU_LANG, KEY_LANG, LANGUAGES } from '@/constant';
 import './language.css';
 
 const Language = () => {
+  const { t, i18n } = useTranslation();
+  const { language, changeLanguage } = i18n;
+
   const onChange = (event) => {
     const { value } = event.target;
     sessionStorage.setItem(KEY_LANG, value);
+    changeLanguage(value);
   };
+
   return (
     <aside id="language-aside">
       <header>
@@ -16,14 +22,14 @@ const Language = () => {
       </header>
       <Radio.Group
         name="radio-language"
-        defaultValue={LANGUAGES.KOREAN}
+        defaultValue={language}
         onChange={onChange}
       >
-        <Radio.Option value={LANGUAGES.KOREAN}>한국어</Radio.Option>
-        <Radio.Option value={LANGUAGES.ENGLISH}>영어</Radio.Option>
-        <Radio.Option value={LANGUAGES.JAPANESE}>일본어</Radio.Option>
-        <Radio.Option value={LANGUAGES.CHINESE}>중국어</Radio.Option>
-        <Radio.Option value={LANGUAGES.GERMAN}>독일어</Radio.Option>
+        <Radio.Option value={LANGUAGES.KOREAN}>{t('ko')}</Radio.Option>
+        <Radio.Option value={LANGUAGES.ENGLISH}>{t('en')}</Radio.Option>
+        <Radio.Option value={LANGUAGES.JAPANESE}>{t('ja')}</Radio.Option>
+        <Radio.Option value={LANGUAGES.CHINESE}>{t('zh')}</Radio.Option>
+        <Radio.Option value={LANGUAGES.GERMAN}>{t('de')}</Radio.Option>
       </Radio.Group>
       <footer>
         <label htmlFor={INPUT_ID_SUB_MENU_LANG}>돌아가기</label>
