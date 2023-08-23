@@ -33,3 +33,29 @@ input#menu-icon:checked
     left: 0;
   }
 }
+
+aside#language-aside > header + div.change-language {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 10px;
+  @media (max-width: 768px) {
+    padding: 0 20px;
+    & > fieldset > legend {
+      display: none;
+    }
+  }
+  @media not (max-width: 768px) {
+    margin: 0 20px 20px;
+    padding: 30px 20px;
+    border-radius: 20px;
+    border: 1px dotted lightgray;
+  }
+  & span:nth-child(2n + 1) {
+    color: gray;
+  }
+  & > button {
+    min-width: 100px;
+    align-self: flex-end;
+  }
+}

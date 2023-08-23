@@ -20,17 +20,21 @@ const Language = () => {
         <h2>Language</h2>
         <p>다른 언어로 변경 가능합니다.</p>
       </header>
-      <Radio.Group
-        name="radio-language"
-        defaultValue={language}
-        onChange={onChange}
-      >
-        <Radio.Option value={LANGUAGES.KOREAN}>{t('ko')}</Radio.Option>
-        <Radio.Option value={LANGUAGES.ENGLISH}>{t('en')}</Radio.Option>
-        <Radio.Option value={LANGUAGES.JAPANESE}>{t('ja')}</Radio.Option>
-        <Radio.Option value={LANGUAGES.CHINESE}>{t('zh')}</Radio.Option>
-        <Radio.Option value={LANGUAGES.GERMAN}>{t('de')}</Radio.Option>
-      </Radio.Group>
+      <div className="change-language">
+        <Radio.Group
+          name="radio-language"
+          defaultValue={language}
+          onChange={onChange}
+          column
+          title="언어를 선택해주세요"
+        >
+          <Radio.Option value={LANGUAGES.KOREAN}>{t('ko')}</Radio.Option>
+          <Radio.Option value={LANGUAGES.ENGLISH}>{t('en')}</Radio.Option>
+          <Radio.Option value={LANGUAGES.JAPANESE}>{t('ja')}</Radio.Option>
+          <Radio.Option value={LANGUAGES.CHINESE}>{t('zh')}</Radio.Option>
+          <Radio.Option value={LANGUAGES.GERMAN}>{t('de')}</Radio.Option>
+        </Radio.Group>
+      </div>
       <footer>
         <label htmlFor={INPUT_ID_SUB_MENU_LANG}>돌아가기</label>
       </footer>
