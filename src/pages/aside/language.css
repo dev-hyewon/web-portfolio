@@ -38,6 +38,9 @@ aside#language-aside > header + div > div.change-language {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  & span:nth-child(2n + 1) {
+    color: gray;
+  }
   & > button {
     min-width: 100px;
     align-self: flex-end;

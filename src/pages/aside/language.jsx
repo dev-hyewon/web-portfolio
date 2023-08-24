@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Radio from '@/components/radio';
 import {
+  BLACK_LANGUAGES,
   INPUT_ID_MENU,
   INPUT_ID_SUB_MENU_LANG,
   KEY_LANG,
-  LANGUAGES,
+  WHITE_LANGUAGES,
 } from '@/constant';
 import './language.css';
 
@@ -55,11 +56,17 @@ const Language = () => {
             column
             title="언어를 선택해주세요"
           >
-            <Radio.Option value={LANGUAGES.KOREAN}>{t('ko')}</Radio.Option>
-            <Radio.Option value={LANGUAGES.ENGLISH}>{t('en')}</Radio.Option>
-            <Radio.Option value={LANGUAGES.JAPANESE}>{t('ja')}</Radio.Option>
-            <Radio.Option value={LANGUAGES.CHINESE}>{t('zh')}</Radio.Option>
-            <Radio.Option value={LANGUAGES.GERMAN}>{t('de')}</Radio.Option>
+            {[...WHITE_LANGUAGES, ...BLACK_LANGUAGES].map((lang) => {
+              const i18nKey = lang.split('-')[0];
+              return (
+                <Radio.Option key={`option_${lang}`} value={lang}>
+                  <span>{t(i18nKey)}</span>
+                  {language !== lang && (
+                    <span> : {t(i18nKey, { lng: lang })}</span>
+                  )}
+                </Radio.Option>
+              );
+            })}
           </Radio.Group>
           <button
             className="apply"
