@@ -8,8 +8,8 @@ aside#language-aside {
   box-sizing: border-box;
   @media (max-width: 768px) {
     width: 100%;
-    height: 400px;
-    bottom: -400px;
+    height: 440px;
+    bottom: -440px;
     left: 0;
     border-radius: 20px 20px 0 0;
   }
@@ -34,12 +34,16 @@ input#menu-icon:checked
   }
 }
 
-aside#language-aside > header + div.change-language {
+aside#language-aside > header + div > div.change-language {
   display: flex;
-  align-items: start;
   flex-direction: column;
   gap: 10px;
+  & > button {
+    min-width: 100px;
+    align-self: flex-end;
+  }
   @media (max-width: 768px) {
+    align-items: start;
     padding: 0 20px;
     & > fieldset > legend {
       display: none;
@@ -50,12 +54,5 @@ aside#language-aside > header + div.change-language {
     padding: 30px 20px;
     border-radius: 20px;
     border: 1px dotted lightgray;
-  }
-  & span:nth-child(2n + 1) {
-    color: gray;
-  }
-  & > button {
-    min-width: 100px;
-    align-self: flex-end;
   }
 }

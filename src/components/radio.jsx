@@ -18,6 +18,7 @@ const StyledFieldset = styled.fieldset`
 `;
 
 const StyledLabel = styled.label`
+  cursor: pointer;
   display: flex;
   ${(props) => props.$column && 'flex-direction: column;'}
   gap: 5px;
@@ -27,6 +28,7 @@ const RadioContext = createContext();
 
 const Group = ({
   name,
+  checkedValue,
   defaultValue,
   onChange,
   optionColum = false,
@@ -39,7 +41,13 @@ const Group = ({
   title,
   children,
 }) => {
-  const context = { name, defaultValue, onChange, column: optionColum };
+  const context = {
+    name,
+    checkedValue,
+    defaultValue,
+    onChange,
+    column: optionColum,
+  };
   return (
     <StyledFieldset
       $column={column}
@@ -60,14 +68,17 @@ const Group = ({
 };
 
 const Option = ({ value, disabled = false, children, column = false }) => {
-  const { name, defaultValue, onChange } = useContext(RadioContext);
+  const { name, checkedValue, defaultValue, onChange } =
+    useContext(RadioContext);
+  const isControlled = checkedValue !== undefined;
   return (
     <StyledLabel $column={column}>
       <input
         type="radio"
         value={value}
         name={name}
-        defaultChecked={value === defaultValue}
+        checked={isControlled ? value === checkedValue : undefined}
+        defaultChecked={!isControlled ? value === defaultValue : undefined}
         disabled={disabled}
         onChange={onChange}
       />
