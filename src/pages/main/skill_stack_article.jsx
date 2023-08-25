@@ -1,7 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { TechImg } from '@/components/icons8';
 import './skill_stack_article.css';
 import './styles.css';
-import { TechImg } from '@/components/icons8';
 
 const techList = [
   {
@@ -40,15 +41,16 @@ const techList = [
 ];
 
 const SkillStackArticle = () => {
+  const { t } = useTranslation();
   return (
     <article id="main-section-skill" className="section-wrapper">
       <header>
         <h1>
           <a data-icon="📂" href="#main-section-skill">
-            스킬스택
+            {t('section_title_tech')}
           </a>
         </h1>
-        <h4>웹을 구성하고 유지 보수할 수 있습니다.</h4>
+        <h4>{t('section_detail_tech')}</h4>
       </header>
       <div>
         <dl>

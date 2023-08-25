@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { SNS_Img } from '@/components/icons8';
 import { INPUT_ID_MENU, INPUT_ID_SUB_MENU_LANG } from '@/constant';
 import profileImg from '@assets/image/google_profile.jpg';
@@ -7,6 +8,7 @@ import LanguageIcon from '@assets/svg/icon_language.svg';
 import './aside.css';
 
 const Aside = ({ on }) => {
+  const { t } = useTranslation();
   const [onLanguageMemu, setOnLanguageMemu] = useState(false);
 
   useEffect(() => {
@@ -30,12 +32,18 @@ const Aside = ({ on }) => {
             onDragStart={(e) => e.preventDefault()}
           ></img>
         </figure>
-        <h4>Junior Developer. 이혜원</h4>
+        <h4>{t('junior_developer', { name: t('lhw') })}</h4>
         <address className="sns-link">
-          <a href="https://velog.io/@dev-hyewon" title="Velog 바로가기">
+          <a
+            href="https://velog.io/@dev-hyewon"
+            title={t('go_to', { siteName: 'Velog' })}
+          >
             <img src={veloglogoImg} alt="velog"></img>
           </a>
-          <a href="https://github.com/dev-hyewon" title="Github 바로가기">
+          <a
+            href="https://github.com/dev-hyewon"
+            title={t('go_to', { siteName: 'Github' })}
+          >
             {SNS_Img('github')}
           </a>
         </address>
@@ -43,22 +51,22 @@ const Aside = ({ on }) => {
       <dl>
         <dt>
           <a data-icon="📃" href="#main-section-intro">
-            자기소개
+            {t('section_title_introduction')}
           </a>
         </dt>
         <dt>
           <a data-icon="📂" href="#main-section-skill">
-            기술 스택
+            {t('section_title_tech')}
           </a>
         </dt>
         <dt>
           <a data-icon="📂" href="#main-section-project">
-            프로젝트
+            {t('section_title_work')}
           </a>
         </dt>
         <dt>
           <a data-icon="📃" href="#main-section-education">
-            학력/이력
+            {t('section_title_education')}
           </a>
         </dt>
         <dt>
@@ -71,13 +79,13 @@ const Aside = ({ on }) => {
           />
           <label htmlFor={INPUT_ID_SUB_MENU_LANG}>
             <img src={LanguageIcon} width="24px" />
-            <span>Language</span>
+            <span>{t('language_settings')}</span>
           </label>
         </dt>
       </dl>
       <footer>
         <label id="aside-close" htmlFor={INPUT_ID_MENU}>
-          닫기
+          {t('btn_close')}
         </label>
       </footer>
     </aside>

@@ -44,8 +44,8 @@ const Language = () => {
   return (
     <aside id="language-aside">
       <header>
-        <h2>Language</h2>
-        <p>다른 언어로 변경 가능합니다.</p>
+        <h2>{t('language_settings')}</h2>
+        <span>{t('set_language')}</span>
       </header>
       <div>
         <div className="change-language">
@@ -54,7 +54,7 @@ const Language = () => {
             checkedValue={selectedLang}
             onChange={onChange}
             column
-            title="언어를 선택해주세요"
+            title={t('please_select_language')}
           >
             {[...WHITE_LANGUAGES, ...BLACK_LANGUAGES].map((lang) => {
               const i18nKey = lang.split('-')[0];
@@ -73,12 +73,12 @@ const Language = () => {
             onClick={onApply}
             disabled={selectedLang === language}
           >
-            적용
+            {t('btn_apply')}
           </button>
         </div>
       </div>
       <footer>
-        <label htmlFor={INPUT_ID_SUB_MENU_LANG}>돌아가기</label>
+        <label htmlFor={INPUT_ID_SUB_MENU_LANG}>{t('btn_go_back')}</label>
       </footer>
     </aside>
   );
