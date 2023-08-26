@@ -39,6 +39,7 @@ const Language = () => {
   const onApply = () => {
     sessionStorage.setItem(KEY_LANG, selectedLang);
     changeLanguage(selectedLang);
+    document.documentElement.lang = selectedLang.split('-')[0];
   };
 
   return (

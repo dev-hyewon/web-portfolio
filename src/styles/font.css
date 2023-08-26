@@ -35,5 +35,38 @@
 
 * {
   box-sizing: border-box;
+}
+
+html:lang(ko),
+html:lang(en),
+html:lang(de) {
   font-family: 'Noto Sans KR', sans-serif;
+}
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 300, 400, 500, 700;
+  font-display: swap;
+  src: local('Noto Sans Japanese'), local('NotoSansJP-Regular'),
+    url('https://fonts.googleapis.com/earlyaccess/notosansjp.css')
+      format('stylesheet');
+}
+
+html:lang(ja) {
+  font-family: 'Noto Sans Japanese', sans-serif;
+}
+
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 300, 400, 500, 700;
+  font-display: swap;
+  src: local('Noto Sans SC'), local('NotoSansSC-Regular'),
+    url('https://fonts.googleapis.com/earlyaccess/notosansjp.css')
+      format('stylesheet');
+}
+
+html:lang(zh) {
+  font-family: 'Noto Sans SC', sans-serif;
 }

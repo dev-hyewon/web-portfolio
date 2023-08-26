@@ -11,6 +11,7 @@ import jsonDE from './langs/de.json';
 import jsonEN from './langs/en.json';
 import jsonJP from './langs/ja.json';
 import jsonKO from './langs/ko.json';
+import '@/styles/font.css';
 
 const resources = {
   [WHITE_LANGUAGES[0]]: { translation: jsonKO },
@@ -28,6 +29,8 @@ if (!USER_LANGAUGE) {
   const isSupported = Object.values(LANGUAGES).includes(NAVIGATOR_LANGAUGE);
   USER_LANGAUGE = isSupported ? NAVIGATOR_LANGAUGE : LANGUAGES.KOREAN;
 }
+
+document.documentElement.lang = USER_LANGAUGE.split('-')[0];
 
 i18n.use(initReactI18next).init({
   resources,
