@@ -22,6 +22,36 @@ const StyledLabel = styled.label`
   display: flex;
   ${(props) => props.$column && 'flex-direction: column;'}
   gap: 5px;
+  & input[type='radio'] {
+    height: 1rem;
+    aspect-ratio: 1;
+    border: calc(1rem / 8) solid #939393;
+    padding: calc(1rem / 8);
+    background: radial-gradient(farthest-side, var(--point1-color) 94%, #0000)
+      50%/0 0 no-repeat content-box;
+    border-radius: 50%;
+    outline-offset: calc(1rem / 10);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: inherit;
+    font-size: inherit;
+    transition: 0.3s;
+  }
+  & input[type='radio']:checked {
+    border-color: var(--point1-color);
+    background-size: 100% 100%;
+  }
+  & input[type='radio']:hover {
+    border-color: var(--point1-color);
+  }
+  & input[type='radio']:disabled {
+    background: linear-gradient(#939393 0 0) 50%/100% 20% no-repeat content-box;
+    opacity: 0.5;
+  }
+  &:has(input[type='radio']:disabled) {
+    cursor: not-allowed;
+  }
 `;
 
 const RadioContext = createContext();
