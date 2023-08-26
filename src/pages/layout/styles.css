@@ -15,7 +15,7 @@ article.section-wrapper {
     }
   }
   @media not (max-width: 768px) {
-    padding: 40px;
+    padding: 30px 60px;
     &:last-child {
       height: calc(100vh - 120px);
     }

@@ -17,7 +17,10 @@ const Header = () => {
   const toggleMenu = () => setOn(!on);
 
   return (
-    <div id="header-wrapper">
+    <div
+      id="header-wrapper"
+      onClick={(e) => e.target === e.currentTarget && toggleMenu()}
+    >
       <input
         type="checkbox"
         id={INPUT_ID_MENU}
