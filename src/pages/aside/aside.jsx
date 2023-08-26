@@ -32,7 +32,11 @@ const Aside = ({ on }) => {
             onDragStart={(e) => e.preventDefault()}
           ></img>
         </figure>
-        <h4>{t('junior_developer', { name: t('lhw') })}</h4>
+        <h3
+          dangerouslySetInnerHTML={{
+            __html: t('junior_developer', { name: t('lhw') }),
+          }}
+        />
         <address className="sns-link">
           <a
             href="https://velog.io/@dev-hyewon"

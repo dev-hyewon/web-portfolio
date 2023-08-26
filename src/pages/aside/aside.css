@@ -56,6 +56,9 @@ aside#default-aside > header {
     }
     & > h4 {
       margin: 0;
+      & > figure + h3 > ruby > :where(rp, rt) {
+        color: gray;
+      }
     }
   }
 }
