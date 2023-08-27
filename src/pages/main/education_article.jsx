@@ -35,7 +35,7 @@ const EducationArticle = () => {
         <h4>{t('section_detail_education')}</h4>
       </header>
       <div>
-        <section id="univercity-article">
+        <article id="univercity-article">
           <h3>{t('education')}</h3>
           <div>
             <h4>{t('university_name')}</h4>
@@ -44,13 +44,13 @@ const EducationArticle = () => {
               <FoldableTree key={root.label} node={root} />
             ))}
           </div>
-        </section>
-        <section>
+        </article>
+        <article>
           <h3>{t('certificate')}</h3>
           <ul>
             <li>{t('information_processing_certification')}</li>
           </ul>
-        </section>
+        </article>
       </div>
     </article>
   );

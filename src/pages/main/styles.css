@@ -1,5 +1,10 @@
 article.section-wrapper {
-  margin: 0 20px;
+  @media (max-width: 768px) {
+    margin: 0 5px;
+  }
+  @media not (max-width: 768px) {
+    margin: 0 20px;
+  }
 }
 
 article.section-wrapper:not(:first-child) {
@@ -8,13 +13,18 @@ article.section-wrapper:not(:first-child) {
 
 article.section-wrapper > header {
   margin: 15px 0 0;
-  padding: 5px 0 30px;
   position: sticky;
   top: 0;
   z-index: 1;
   background: linear-gradient(180deg, white 80%, transparent);
   & > h1::before {
     margin-right: 10px;
+  }
+  @media (max-width: 768px) {
+    padding: 5px 15px 30px;
+  }
+  @media not (max-width: 768px) {
+    padding: 5px 0 30px;
   }
 }
 
@@ -32,35 +42,41 @@ article#main-section-education > div {
   flex-flow: column wrap;
   gap: 20px;
 }
-
-article#main-section-education > div > section > :where(figure, div) {
+article#main-section-education > div > article > :where(figure, div) {
   @media not (max-width: 768px) {
     display: inline-block;
     vertical-align: top;
   }
 }
 
-article#main-section-education > div > section {
+article#main-section-education > div > article {
+  background-color: var(--section-background);
+  border-radius: 1.5rem;
+  position: relative;
+  &#univercity-article::after {
+    position: absolute;
+    top: 20px;
+  }
   @media (max-width: 768px) {
-    position: relative;
+    padding: 20px;
     &#univercity-article::after {
-      position: absolute;
-      top: 0;
-      right: 0;
+      right: 10px;
+      width: 192px;
+      height: 192px;
     }
   }
   @media not (max-width: 768px) {
-    display: flex;
+    padding: 20px 40px;
     &#univercity-article::after {
-      margin-left: 20px;
+      right: 20px;
+      width: 256px;
+      height: 256px;
     }
   }
 }
 
-article#main-section-education > div > section#univercity-article::after {
+article#main-section-education > div > article#univercity-article::after {
   content: '';
-  width: 192px;
-  height: 192px;
   display: block;
   background-image: url(/src/assets/image/01MainSymb.jpg);
   background-size: cover;
