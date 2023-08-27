@@ -9,8 +9,8 @@ const Header = () => {
 
   useEffect(() => {
     if (on) {
-      document.body.style = 'overflow: hidden';
-      return () => (document.body.style = 'overflow: auto');
+      document.body.style = 'overflow-y: hidden';
+      return () => (document.body.style = 'overflow-y: auto');
     }
   }, [on]);
 
