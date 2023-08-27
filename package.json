@@ -1,5 +1,6 @@
 {
   "name": "web-portfolio",
+  "homepage": "http://dev-hyewon.github.io/web-portfolio/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,6 +18,8 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
@@ -42,6 +45,7 @@
     "customize-cra": "^1.0.0",
     "eslint": "^8.49.0",
     "eslint-plugin-react": "^7.33.2",
+    "gh-pages": "^6.0.0",
     "react-app-rewired": "^2.2.1"
   }
 }
