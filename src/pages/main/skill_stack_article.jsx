@@ -56,10 +56,10 @@ const SkillStackArticle = () => {
         <dl>
           {techList.map((section) => (
             <section key={`section_${section.title}`}>
-              <dt>{section.title}</dt>
+              <dt className="notranslate">{section.title}</dt>
               <div>
                 {section.items.map((item) => (
-                  <dd key={`skill_${item}`}>
+                  <dd className="notranslate" key={`skill_${item}`}>
                     {TechImg(item)}
                     {item}
                   </dd>
