@@ -6,6 +6,7 @@
   "ja": "日本語",
   "zh": "中国語",
   "de": "ドイツ語",
+  "location_seoul": "韓国、ソウル特別市",
   "go_to": "{{siteName}}へ移動",
   "language_settings": "言語設定",
   "set_language": "言語設定を変更できます。",

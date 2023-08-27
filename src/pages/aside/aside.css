@@ -62,6 +62,19 @@ aside#default-aside > header {
     }
   }
 }
+aside#default-aside > header > address.address-info {
+  display: flex;
+  flex-flow: column wrap;
+  & > a::before {
+    content: attr(data-icon);
+    font-style: normal;
+    margin-right: 0.4rem;
+  }
+  & > a > span:hover {
+    color: var(--point1-color);
+    text-decoration-line: underline;
+  }
+}
 
 aside#default-aside > header > address.sns-link {
   margin-top: 10px;

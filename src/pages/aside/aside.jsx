@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SNS_Img } from '@/components/icons8';
-import { INPUT_ID_MENU, INPUT_ID_SUB_MENU_LANG } from '@/constant';
+import { INFO_EMAIL, INPUT_ID_MENU, INPUT_ID_SUB_MENU_LANG } from '@/constant';
 import profileImg from '@assets/image/google_profile.jpg';
 import veloglogoImg from '@assets/image/velog_logo.svg';
 import LanguageIcon from '@assets/svg/icon_language.svg';
@@ -10,6 +10,9 @@ import './aside.css';
 const Aside = ({ on }) => {
   const { t } = useTranslation();
   const [onLanguageMemu, setOnLanguageMemu] = useState(false);
+  const GOOGLE_MAPS_URL = `https://www.google.com/maps/place/${t(
+    'location_seoul'
+  ).replace(' ', '+')}`;
 
   useEffect(() => {
     if (!on) {
@@ -37,6 +40,14 @@ const Aside = ({ on }) => {
             __html: t('junior_developer', { name: t('lhw') }),
           }}
         />
+        <address className="address-info">
+          <a data-icon="📧" title="Email" href={`mailto:${INFO_EMAIL}`}>
+            <span>{INFO_EMAIL}</span>
+          </a>
+          <a data-icon="🏠" title="Google Maps" href={GOOGLE_MAPS_URL}>
+            <span>{t('location_seoul')}</span>
+          </a>
+        </address>
         <address className="sns-link">
           <a
             href="https://velog.io/@dev-hyewon"

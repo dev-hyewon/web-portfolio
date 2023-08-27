@@ -16,3 +16,5 @@ export const BLACK_LANGUAGES = [
   LANGUAGES.CHINESE,
   LANGUAGES.GERMAN,
 ];
+
+export const INFO_EMAIL = 'developer.hyewon@gmail.com';
