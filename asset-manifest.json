@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/web-portfolio/static/css/main.20aa2bd0.css",
+    "main.js": "/web-portfolio/static/js/main.24d53884.js",
+    "static/js/787.e8a52378.chunk.js": "/web-portfolio/static/js/787.e8a52378.chunk.js",
+    "static/media/NotoSansKR-Light.ttf": "/web-portfolio/static/media/NotoSansKR-Light.eef1c4b85baf52cc28a7.ttf",
+    "static/media/NotoSansKR-Regular.ttf": "/web-portfolio/static/media/NotoSansKR-Regular.9bc92a36ed81392f698b.ttf",
+    "static/media/NotoSansKR-Bold.ttf": "/web-portfolio/static/media/NotoSansKR-Bold.f064e139058bfd9df2fb.ttf",
+    "static/media/NotoSansKR-Medium.ttf": "/web-portfolio/static/media/NotoSansKR-Medium.b9d6e1b3e7a3d63546cc.ttf",
+    "static/media/01MainSymb.jpg": "/web-portfolio/static/media/01MainSymb.e7e75f25963c55ce2eac.jpg",
+    "static/media/Naver_whale_logo.png": "/web-portfolio/static/media/Naver_whale_logo.0583da0eb6152c9c8404.png",
+    "index.html": "/web-portfolio/index.html",
+    "static/media/icon_language.svg": "/web-portfolio/static/media/icon_language.a37e6c273ebc4c17ed6479fbd6ae4b42.svg",
+    "static/media/velog_logo.svg": "/web-portfolio/static/media/velog_logo.458894c7953be110e0461995abebc9f1.svg",
+    "main.20aa2bd0.css.map": "/web-portfolio/static/css/main.20aa2bd0.css.map",
+    "main.24d53884.js.map": "/web-portfolio/static/js/main.24d53884.js.map",
+    "787.e8a52378.chunk.js.map": "/web-portfolio/static/js/787.e8a52378.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.20aa2bd0.css",
+    "static/js/main.24d53884.js"
+  ]
+}
